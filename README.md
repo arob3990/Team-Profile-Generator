@@ -12,7 +12,7 @@ Node.js command-line application that takes in information about employees on a 
 - [Testing](#testing)
 - [Questions](#questions)
 - [Video](#video)
-- [Example HTML] (#example-html)
+- [Example HTML](#example-html)
 
 ## Installation Instructions
 ```
