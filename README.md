@@ -12,6 +12,7 @@ Node.js command-line application that takes in information about employees on a 
 - [Testing](#testing)
 - [Questions](#questions)
 - [Video](#video)
+- [Example HTML] (#example-html)
 
 ## Installation Instructions
 ```
@@ -45,3 +46,7 @@ Email me your questions at: [alex.robertson390@gmail.com](mailto:alex.robertson3
 
 ## Video
 Watch this for a guide on this project: [Video](https://drive.google.com/file/d/1ikmqK6itZLsFs9wnLWhRYbN2OAb7XWkQ/view)
+
+## Example HTML 
+![image](https://user-images.githubusercontent.com/115756254/211650502-b47de837-4d69-46c5-9493-3c1ff49dda99.png)
+
