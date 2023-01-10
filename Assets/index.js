@@ -12,6 +12,7 @@ const fs = require('fs');
 
 const team = [];
 
+//begin of command line prompts starting with manager
 const createManager = () => {
     return inquirer.prompt([
         {
@@ -36,17 +37,17 @@ const createManager = () => {
         },
     
     ])
-
+// takes answers to create a new Manager object
     .then((answers) => {
-        console.log("THESE ARE THE ANSWERS: ", answers)
-        const manager = new Manager(answers.name, answers.id, answers.email, answers.role, answers.officeNumber);
+        console.log(answers)
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         team.push(manager)
         
 
 
     })
 };
-
+//after manager questions are answered, employee questions will begin
     const addEmployee = () =>{
         return inquirer.prompt([
         {
@@ -82,6 +83,7 @@ const createManager = () => {
             message: "Please enter in the intern's school",
             when: (input) => input.role === "Intern"
         },
+        //below input prompts the user to see if they'd like to add more employees
         {
             type: "confirm",
             name: "addEmployee",
@@ -89,6 +91,7 @@ const createManager = () => {
             default: false
         }
     ])
+    //inputs from employee questions are logged as Engineer or Intern objects depending on user selection
     .then((employeeAnswers) => {
         if(employeeAnswers.role === "Engineer"){
             employee = new Engineer (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, employeeAnswers.github);
@@ -98,7 +101,7 @@ const createManager = () => {
             console.log(employee)
         }
         team.push(employee);
-
+//if the user answers 'yes' to add more employees, the questions will cycle through again until the user answers 'no'
         if(employeeAnswers.addEmployee){
             return addEmployee(team);
         } else {

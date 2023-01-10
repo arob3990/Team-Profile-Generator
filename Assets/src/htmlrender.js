@@ -1,4 +1,4 @@
-
+// below code creates the html <div> for manager employee utlizing data from the Manager object
 const createManager = function (manager) {
     return `
     <div class = "col-4 mt-4">
@@ -8,7 +8,7 @@ const createManager = function (manager) {
                 <h4>Manager</h4><i class = "material-icons"> content_paste</i>
             </div>
             <div class = "card-body">
-                <p class = "id"<ID: ${manager.id}</p>
+                <p class="id">ID: ${manager.id}</p>    
                 <p class = "email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
                 <p class = "office">Office Number: ${manager.officeNumber}</p>
             </div>
@@ -16,7 +16,7 @@ const createManager = function (manager) {
     </div>
     `;
 }
-
+// below code creates the html <div> for engineer employee utlizing data from the Engineer object
 const createEngineer = function (engineer) {
     return `
     <div class="col-4 mt-4">
@@ -33,7 +33,7 @@ const createEngineer = function (engineer) {
         </div>
     </div>`
 }
-
+// below code creates the html <div> for intern employee utlizing data from the Intern object
 const createIntern = function (intern) {
     return `
     <div class="col-4 mt-4">
@@ -61,6 +61,8 @@ const createHTML = (data) => {
 
     // check if manager
 
+    //based off of employee type, the below code takes employee data and launches function to create
+    //the <div> and push it into the array
     if(role === "Manager"){
         const managerHtml = createManager(employee);
 
@@ -86,6 +88,7 @@ const createTeam = createTeamHtml(employeeHtml);
 return createTeam;
 };
 
+//full team page html generation
 const createTeamHtml = function (employeeHtml){
     return `
     <!DOCTYPE html>
